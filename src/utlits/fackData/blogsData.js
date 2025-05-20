@@ -1,6 +1,6 @@
-import blog_1 from "../../assets/images/blog/blog1.jpg";
-import blog_2 from "../../assets/images/blog/blog2.jpg";
-import blog_3 from "../../assets/images/blog/blog3.jpg";
+import blog_1 from "../../assets/images/blog/beyond-code.jpg";
+import blog_2 from "../../assets/images/blog/yelp.jpg";
+import blog_3 from "../../assets/images/blog/chrome.jpg";
 
 export const blodData = [
     {
