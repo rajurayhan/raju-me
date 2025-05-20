@@ -5,13 +5,8 @@ import { Link } from 'react-scroll'
 const menuList = [
     {
         id: 1,
-        path: "home",
-        label: "Home"
-    },
-    {
-        id: 2,
         path: "about",
-        label: "About"
+        label: "Home"
     },
     {
         id: 3,

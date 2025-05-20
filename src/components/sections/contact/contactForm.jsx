@@ -5,7 +5,7 @@ const ContactForm = () => {
     return (
         <div className="col-lg-8">
             <div className="contact-form contact-form-area wow fadeInUp delay-0-4s">
-                <form id="contactForm" className="contactForm" name="contactForm" action="assets/php/form-process.php" method="post">
+                <form id="contactForm" className="contactForm" name="contactForm" action="" method="post">
                     <div className="row">
                         <div className="col-md-6">
                             <div className="form-group">
