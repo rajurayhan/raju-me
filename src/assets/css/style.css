@@ -1256,7 +1256,7 @@ html {
 * ----------------------------------------------------------------------------------------
 */
 .about-area {
-    padding-top: 100px;
+    padding-top: 120px;
     padding-bottom: 100px;
 }
 
@@ -3025,4 +3025,5 @@ ul.blog_pagination li a:hover {
     color: white;
     cursor: pointer;
   }
+  
   

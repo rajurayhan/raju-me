@@ -1,6 +1,6 @@
 import React from 'react'
 import { RiArrowRightUpLine, RiDownloadLine, RiFacebookCircleFill, RiTwitterXLine, RiLinkedinFill, RiGithubLine } from '@remixicon/react'
-import profile_img from "../../assets/images/about/profile.jpg"
+import profile_img from "../../assets/images/about/raju.jpg"
 import SlideUp from '../animations/slideUp'
 const About = () => {
     return (
@@ -14,15 +14,15 @@ const About = () => {
                                 <img src={profile_img} alt="About Me" />
                                 <h2>Raju Rayhan</h2>
                                 <div className="about-btn btn-one text-center">
-                                    <h6>Available for Work</h6>
+                                    <h6>Available for work</h6>
                                     <div className="circle pulse color-pulse"></div>
                                 </div>
                                 <div className="about-social text-center">
                                     <ul>
-                                        <li><a href=""><i><RiFacebookCircleFill size={20} /></i></a></li>
-                                        <li><a href=""><i><RiTwitterXLine size={20} /></i></a></li>
-                                        <li><a href=""><i><RiLinkedinFill size={20} /></i></a></li>
-                                        <li><a href=""><i><RiGithubLine size={20} /></i></a></li>
+                                        <li><a target="_blank" href="https://www.linkedin.com/in/rajurayhan/"><i><RiLinkedinFill size={20} /></i></a></li>
+                                        <li><a target="_blank" href="https://github.com/rajurayhan/"><i><RiGithubLine size={20} /></i></a></li>
+                                        <li><a target="_blank" href="https://www.facebook.com/rajurayhan/"><i><RiFacebookCircleFill size={20} /></i></a></li>
+                                        <li><a target="_blank" href="https://twitter.com/raju_rayhan"><i><RiTwitterXLine size={20} /></i></a></li> 
                                     </ul>
                                 </div>
                             </div>
