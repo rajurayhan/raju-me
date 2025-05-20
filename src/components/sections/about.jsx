@@ -2,6 +2,7 @@ import React from 'react'
 import { RiArrowRightUpLine, RiDownloadLine, RiFacebookCircleFill, RiTwitterXLine, RiLinkedinFill, RiGithubLine } from '@remixicon/react'
 import profile_img from "../../assets/images/about/raju.jpg"
 import SlideUp from '../animations/slideUp'
+import { Link } from 'react-scroll'
 const About = () => {
     return (
         <section id="about" className="about-area">
@@ -14,7 +15,7 @@ const About = () => {
                                 <img src={profile_img} alt="About Me" />
                                 <h2>Raju Rayhan</h2>
                                 <div className="about-btn btn-one text-center">
-                                    <h6>Available for work</h6>
+                                    <h6>Available</h6>
                                     <div className="circle pulse color-pulse"></div>
                                 </div>
                                 <div className="about-social text-center">
@@ -37,7 +38,8 @@ const About = () => {
                                     I build things <span>That Works</span> and <span>Solves problems</span>
                                 </h2>
                                 <div className="hero-btns">
-                                    <a href="#" className="theme-btn">Download CV <i><RiDownloadLine size={16} /></i></a>
+                                <Link to={"contact"} spy={true} smooth={true} offset={0} duration={500}  className="theme-btn" > Reach out <i><RiDownloadLine size={16} /></i></Link>
+                                    {/* <a href="#" className="theme-btn">Reach out <i><RiDownloadLine size={16} /></i></a> */}
                                 </div>
                             </SlideUp>
                             <SlideUp>
