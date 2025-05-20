@@ -59,7 +59,7 @@ const Header = () => {
                         {/* START LOGO DESIGN AREA */}
                         <div className="logo-outer">
                             <div className="logo">
-                                <a href="#"><img src={logo} alt="Logo" title="Logo" /></a>
+                                <a href="#">R A J U</a>
                             </div>
                         </div>
                         {/* END LOGO DESIGN AREA */}
@@ -70,7 +70,8 @@ const Header = () => {
                                 <div className="navbar-header">
                                     <div className="mobile-logo">
                                         <a href="#">
-                                            <img src={logo} alt="Logo" title="Logo" />
+                                            R A J U
+                                            {/* <img src={logo} alt="Logo" title="Logo" /> */}
                                         </a>
                                     </div>
                                     {/* Toggle Button */}

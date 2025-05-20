@@ -33,20 +33,24 @@ const Card = ({ date, src, title, descripation, id }) => {
     return (
         <div className="col-lg-4 col-md-6">
             <ZoomIn id={id}>
-                <div className="blog-item">
-                    <div className="image">
-                        <img src={src} alt="Blog" />
+                <div className="blog-item" style={{ height: '600px', display: 'flex', flexDirection: 'column' }}>
+                    <div className="image" style={{ height: '300px', overflow: 'hidden' }}>
+                        <img src={src} alt="Blog" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
-                    <div className="content">
-                        <div className="blog-meta mt-15">
-                            <a className="date" href="#"><i className="far fa-calendar-alt"></i>{date}</a>
+                    <div className="content" style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                        <div>
+                            <div className="blog-meta mt-15">
+                                <a className="date" href="#"><i className="far fa-calendar-alt"></i>{date}</a>
+                            </div>
+                            <h5>
+                                <a href="#">{title}</a>
+                            </h5>
+                            <p>{descripation}</p>
                         </div>
-                        <h5>
-                            <a href="#">{title}</a>
-                        </h5>
-                        <p>{descripation}</p>
-                        <hr />
-                        <a href="#" className="theme-btn">Read More<i><RiBookReadLine size={15} /></i></a>
+                        <div>
+                            <hr />
+                            <a href="#" className="theme-btn">Read More<i><RiBookReadLine size={15} /></i></a>
+                        </div>
                     </div>
                 </div>
             </ZoomIn>

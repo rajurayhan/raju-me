@@ -9,7 +9,7 @@ const Footer = () => {
                         <div class="col-lg-12 text-center">
                             <div class="copyright-text">
                                 <p>
-                                    Copyright @2023, <a href="#">Kane</a> All
+                                    Copyright @2025, <a href="#">R A J U</a> All
                                     Rights Reserved.
                                 </p>
                             </div>

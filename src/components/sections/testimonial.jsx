@@ -34,7 +34,7 @@ const Testimonial = () => {
                     <div className="col-xl-12 col-lg-12">
                         <Title>
                             <p>Testinomials</p>
-                            <h2>What clients say!</h2>
+                            <h2>What they say!</h2>
                         </Title>
                     </div>
                 </div>

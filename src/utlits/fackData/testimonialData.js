@@ -4,38 +4,30 @@ import author_2 from "../../assets/images/testimonials/author2.jpg"
 export const testimonialData = [
     {
         id: 1,
-        name: "Zonathon Doe",
-        position: "CEO & Founder X",
-        src: author_1,
-        review: `Financial planners help people to knowledge in about how to
-        invest and in save their moneye the most efficient way eve plan
-        ners help people tioniio know ledige in about how.`
+        name: "Kimberley Anselmo",
+        position: "COO, Lighthouse Graphics",
+        src: author_1, // Replace with actual image import
+        review: `Raju’s communication and leadership have been instrumental in delivering complex AI-integrated systems for our team. His ability to combine technical excellence with strategic vision is rare and highly valued.`
     },
     {
         id: 2,
-        name: "Liana Marie",
-        position: "Lead Designer Meta",
-        src: author_2,
-        review: `Financial planners help people to knowledge in about how to
-        invest and in save their moneye the most efficient way eve plan
-        ners help people tioniio know ledige in about how.`
+        name: "Josh ",
+        position: "CEO, Lighthouse Graphics",
+        src: author_2, // Replace with actual image import
+        review: `From leading The Hive to automating our lead conversion funnel, Raju’s innovation has transformed how we operate. He is not just a developer—he's a strategic thinker and solution architect.`
     },
     {
         id: 3,
-        name: "Zonathon Doe",
-        position: "CEO & Founder X",
-        src: author_1,
-        review: `Financial planners help people to knowledge in about how to
-        invest and in save their moneye the most efficient way eve plan
-        ners help people tioniio know ledige in about how.`
+        name: "Marisa Lopez",
+        position: "Project Manager, Lighthouse Graphics",
+        src: author_2, // Replace with actual image import
+        review: `Raju consistently delivers beyond expectations. His proactive communication, documentation habits, and mentorship style have uplifted our entire remote team culture.`
     },
     {
-        id: 3,
-        name: "Liana Marie",
-        position: "Lead Designer Meta",
-        src: author_2,
-        review: `Financial planners help people to knowledge in about how to
-        invest and in save their moneye the most efficient way eve plan
-        ners help people tioniio know ledige in about how.`
-    },
+        id: 4,
+        name: "Michael Singh",
+        position: "CTO, SaaS Startup Client",
+        src: author_2, // Replace with actual image import
+        review: `Raju built and scaled our MVP with incredible speed and quality. His deep understanding of SaaS architecture, Twilio APIs, and user experience makes him an asset to any fast-paced team.`
+    }
 ]

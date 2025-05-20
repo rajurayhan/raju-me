@@ -7,38 +7,37 @@ export const projectsData = [
     {
         id: 1,
         src: work_1,
-        category: "Design",
-        title: "Mobile Application Design",
+        category: "AI",
+        title: "The Hive – AI-Powered Productivity Suite"
     },
     {
         id: 2,
         src: work_2,
-        category: "Game",
-        title: "Website Makeup Design",
+        category: "Automation",
+        title: "Yelp Lead Conversion Tool (Slack + ClickUp + AI)"
     },
     {
         id: 3,
         src: work_3,
-        category: "Branding",
-        title: "Brand Identity and Motion Design",
+        category: "Chrome Extension",
+        title: "Web QA Assistant – Ask AI on Any Website"
     },
     {
         id: 4,
         src: work_4,
-        category: "Marketing",
-        title: "Mobile Application Design",
+        category: "Voice API",
+        title: "Order Confirmation API with Twilio Integration"
     },
     {
         id: 5,
-        src: work_3,
-        category: "Design",
-        title: "Brand Identity and Motion Design",
+        src: work_4,
+        category: "WordPress Plugin",
+        title: "Lighthouse Activity Logger – User Action Tracker"
     },
     {
         id: 6,
-        src: work_1,
-        category: "Marketing",
-        title: "Brand Identity and Motion Design"
-    },
-
+        src: work_4,
+        category: "Time Tracking",
+        title: "Kimai Plugin – Talent Tracker with Project Logs"
+    }
 ]
