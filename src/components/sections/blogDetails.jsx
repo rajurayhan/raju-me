@@ -11,6 +11,7 @@ const BlogDetails = () => {
     
     // Find the blog post that matches the slug
     const blog = blodData.find(blog => blog.slug === slug)
+    const ogImageUrl = `https://rajurayhan.com/assets/${blog?.src_og}`
 
     if (!blog) {
         return <div className="container mt-5">
@@ -28,14 +29,16 @@ const BlogDetails = () => {
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={blog.title} />
                 <meta property="og:description" content={blog.descripation} />
-                <meta property="og:image" content={blog.src_og} />
+                <meta property="og:image" content={ogImageUrl} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
                 <meta property="og:url" content={`https://rajurayhan.com/blog/${blog.slug}`} />
                 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={blog.title} />
                 <meta name="twitter:description" content={blog.descripation} />
-                <meta name="twitter:image" content={blog.src_og} />
+                <meta name="twitter:image" content={ogImageUrl} />
             </Helmet>
 
             <header className="blog-header" style={{

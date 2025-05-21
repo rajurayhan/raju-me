@@ -10,36 +10,33 @@ import Testimonial from './components/sections/testimonial'
 import Blogs from './components/sections/blogs'
 import Contact from './components/sections/contact/contact'
 import BlogDetailsLayout from './components/layout/BlogDetailsLayout'
-import { HelmetProvider } from 'react-helmet-async'
 import HomeMeta from './components/meta/HomeMeta'
 
 const App = () => {
   return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={
-            <>
-              <HomeMeta />
-              <Layout>
-                <About />
-                <Services />
-                <Experience />
-                <Portfolio />
-                <Testimonial />
-                <Blogs />
-                <Contact />
-              </Layout>
-            </>
-          } />
-          <Route path="/blog/:slug" element={
-            <BlogDetailsLayout>
-              <BlogDetails />
-            </BlogDetailsLayout>
-          } />
-        </Routes>
-      </BrowserRouter>
-    </HelmetProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <HomeMeta />
+            <Layout>
+              <About />
+              <Services />
+              <Experience />
+              <Portfolio />
+              <Testimonial />
+              <Blogs />
+              <Contact />
+            </Layout>
+          </>
+        } />
+        <Route path="/blog/:slug" element={
+          <BlogDetailsLayout>
+            <BlogDetails />
+          </BlogDetailsLayout>
+        } />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
