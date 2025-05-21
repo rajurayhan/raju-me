@@ -28,14 +28,14 @@ const BlogDetails = () => {
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={blog.title} />
                 <meta property="og:description" content={blog.descripation} />
-                <meta property="og:image" content={blog.src} />
+                <meta property="og:image" content={blog.src_og} />
                 <meta property="og:url" content={`https://rajurayhan.com/blog/${blog.slug}`} />
                 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={blog.title} />
                 <meta name="twitter:description" content={blog.descripation} />
-                <meta name="twitter:image" content={blog.src} />
+                <meta name="twitter:image" content={blog.src_og} />
             </Helmet>
 
             <header className="blog-header" style={{
@@ -89,7 +89,7 @@ const BlogDetails = () => {
                                     </span>
                                 </div>
                                 <div className="blog-content">
-                                    <h2 className="title mt-4">{blog.title}</h2>
+                                    {/* <h2 className="title mt-4">{blog.title}</h2> */}
                                     <div className="markdown-content">
                                         <ReactMarkdown>{blog.detail}</ReactMarkdown>
                                     </div>

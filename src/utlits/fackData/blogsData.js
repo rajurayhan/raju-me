@@ -2,6 +2,10 @@ import blog_1 from "../../assets/images/blog/beyond-code.jpg";
 import blog_2 from "../../assets/images/blog/yelp.jpg";
 import blog_3 from "../../assets/images/blog/chrome.jpg";
 
+import blog_1_og from "../../assets/images/blog/beyond-code-og.jpg";
+import blog_2_og from "../../assets/images/blog/yelp-og.jpg";
+import blog_3_og from "../../assets/images/blog/chrome-og.jpg";
+
 export const blodData = [
     {
         id: 1,
@@ -9,6 +13,7 @@ export const blodData = [
         slug: "beyond-code-getting-industry-ready",
         date: "March 10, 2025",
         src: blog_1,
+        src_og: blog_1_og,
         descripation: "Learn how fresh graduates can bridge the gap between academic knowledge and real-world software development with practical insights and habits.",
         detail: `
 ### Beyond Code: Getting Industry Ready
@@ -34,6 +39,7 @@ This is more than just a career guide — it’s a practical roadmap to becoming
         slug: "automated-lead-conversion-ai-slack-clickup",
         date: "January 3, 2025",
         src: blog_2,
+        src_og: blog_2_og,
         descripation: "A behind-the-scenes look at building a tool that receives Yelp leads, processes them with OpenAI, and notifies teams in Slack with next steps.",
         detail: `
 ### How We Automated Lead Conversion Using AI + Slack + ClickUp
@@ -65,6 +71,7 @@ This setup not only increased efficiency but **elevated our customer experience*
         slug: "chrome-extension-talks-to-any-website",
         date: "August 28, 2024",
         src: blog_3,
+        src_og: blog_3_og,
         descripation: "Here’s how I built a Chrome extension that lets users ask an AI assistant to scan and analyze any visited page, including technical challenges I solved.",
         detail: `
 ### Building a Chrome Extension that Talks to Any Website
