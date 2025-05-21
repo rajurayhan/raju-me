@@ -1,6 +1,7 @@
 import React from 'react'
 import { RiBookReadLine } from '@remixicon/react'
 import Title from '../ui/title'
+import { Link } from 'react-router-dom'
 
 import ZoomIn from '../animations/zoomIn'
 import { blodData } from '../../utlits/fackData/blogsData'
@@ -19,7 +20,10 @@ const Blogs = () => {
                     </div>
                 </div>
                 <div className="row">
-                    {blodData.map(({ date, descripation, id, src, title }) => <Card key={id} date={date} src={src} descripation={descripation} title={title} id={id} />)}
+                    {blodData.map(({ date, descripation, id, src, title, slug }) => 
+                        <Card key={id} date={date} src={src} descripation={descripation} 
+                              title={title} id={id} slug={slug} />
+                    )}
                 </div>
             </div>
         </section>
@@ -29,7 +33,7 @@ const Blogs = () => {
 export default Blogs
 
 
-const Card = ({ date, src, title, descripation, id }) => {
+const Card = ({ date, src, title, descripation, id, slug }) => {
     return (
         <div className="col-lg-4 col-md-6">
             <ZoomIn id={id}>
@@ -43,13 +47,15 @@ const Card = ({ date, src, title, descripation, id }) => {
                                 <a className="date" href="#"><i className="far fa-calendar-alt"></i>{date}</a>
                             </div>
                             <h5>
-                                <a href="#">{title}</a>
+                                <Link to={`/blog/${slug}`}>{title}</Link>
                             </h5>
                             <p>{descripation}</p>
                         </div>
                         <div>
                             <hr />
-                            <a href="#" className="theme-btn">Read More<i><RiBookReadLine size={15} /></i></a>
+                            <Link to={`/blog/${slug}`} className="theme-btn">
+                                Read More<i><RiBookReadLine size={15} /></i>
+                            </Link>
                         </div>
                     </div>
                 </div>

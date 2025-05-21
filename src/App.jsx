@@ -1,33 +1,45 @@
 import React from 'react'
-import Banner from './components/sections/banner'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import BlogDetails from './components/sections/blogDetails'
+import Layout from './components/layout/Layout'
 import About from './components/sections/about'
 import Services from './components/sections/services'
 import Experience from './components/sections/experience'
-import Header from './components/sections/header'
+import Portfolio from './components/sections/portfolio'
 import Testimonial from './components/sections/testimonial'
-import Pricing from './components/sections/pricing'
 import Blogs from './components/sections/blogs'
 import Contact from './components/sections/contact/contact'
-import Portfolio from './components/sections/portfolio'
-import Footer from './components/sections/footer'
-import ProgressBar from './components/ui/progressBar'
+import BlogDetailsLayout from './components/layout/BlogDetailsLayout'
+import { HelmetProvider } from 'react-helmet-async'
+import HomeMeta from './components/meta/HomeMeta'
 
 const App = () => {
   return (
-    <main>
-      <Header />
-      {/* <Banner /> */}
-      <About />
-      <Services />
-      <Experience />
-      <Portfolio />
-      <Testimonial />
-      {/* <Pricing /> */}
-      <Blogs />
-      <Contact />
-      <Footer />
-      <ProgressBar />
-    </main>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <HomeMeta />
+              <Layout>
+                <About />
+                <Services />
+                <Experience />
+                <Portfolio />
+                <Testimonial />
+                <Blogs />
+                <Contact />
+              </Layout>
+            </>
+          } />
+          <Route path="/blog/:slug" element={
+            <BlogDetailsLayout>
+              <BlogDetails />
+            </BlogDetailsLayout>
+          } />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }
 

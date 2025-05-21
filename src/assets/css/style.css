@@ -3026,4 +3026,49 @@ ul.blog_pagination li a:hover {
     cursor: pointer;
   }
   
+/* Blog Details Styles */
+.blog-details-area {
+    padding-top: 120px;
+}
+
+.markdown-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+}
+
+.markdown-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.markdown-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.markdown-content ul {
+    list-style-type: none;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.markdown-content ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.markdown-content ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.markdown-content strong {
+    font-weight: 600;
+}
+  
   

@@ -1,53 +1,105 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { blodData } from '../../utlits/fackData/blogsData'
-import { RiCalendarLine, RiUser3Line, RiMessage2Line } from '@remixicon/react'
+import ReactMarkdown from 'react-markdown'
+import { RiArrowLeftLine } from '@remixicon/react'
 
 const BlogDetails = () => {
-    const { id } = useParams()
-    const blog = blodData.find(blog => blog.id === parseInt(id))
+    const { slug } = useParams()
+    const navigate = useNavigate()
+    
+    // Find the blog post that matches the slug
+    const blog = blodData.find(blog => blog.slug === slug)
 
     if (!blog) {
-        return <div>Blog not found</div>
+        return <div className="container mt-5">
+            <h2>Blog post not found</h2>
+        </div>
     }
 
     return (
-        <section className="blog-details-area">
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-lg-10">
-                        <div className="blog-details-content">
-                            <div className="image">
-                                <img src={blog.src} alt={blog.title} style={{ width: '100%', height: 'auto', borderRadius: '10px' }} />
-                            </div>
-                            <div className="content mt-45">
-                                <div className="blog-meta">
-                                    <span><i><RiCalendarLine /></i> {blog.date}</span>
-                                    <span><i><RiUser3Line /></i> By Raju Rayhan</span>
-                                    <span><i><RiMessage2Line /></i> 2 Comments</span>
+        <>
+            <Helmet>
+                <title>{blog.title} | Raju Rayhan</title>
+                <meta name="description" content={blog.descripation} />
+                
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={blog.title} />
+                <meta property="og:description" content={blog.descripation} />
+                <meta property="og:image" content={blog.src} />
+                <meta property="og:url" content={`https://rajurayhan.com/blog/${blog.slug}`} />
+                
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={blog.title} />
+                <meta name="twitter:description" content={blog.descripation} />
+                <meta name="twitter:image" content={blog.src} />
+            </Helmet>
+
+            <header className="blog-header" style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                zIndex: 1000,
+                backgroundColor: 'white',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                padding: '20px 0'
+            }}>
+                <div className="container">
+                    <button 
+                        onClick={() => navigate('/')}
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer',
+                            fontSize: '16px',
+                            color: '#333'
+                        }}
+                    >
+                        <RiArrowLeftLine size={20} />
+                        Back to Home
+                    </button>
+                </div>
+            </header>
+
+            <section className="blog-details-area" style={{ marginTop: '100px', paddingTop: '50px' }}>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-8">
+                            <div className="blog-details-wrapper">
+                                <div className="blog-thumb">
+                                    <img src={blog.src} alt={blog.title} 
+                                        style={{ 
+                                            width: '100%', 
+                                            height: '400px', 
+                                            objectFit: 'cover',
+                                            borderRadius: '10px'
+                                        }} 
+                                    />
                                 </div>
-                                <h2>{blog.title}</h2>
-                                <p>{blog.descripation}</p>
-                                
-                                {/* Example content sections */}
-                                <h3>Introduction</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                
-                                <h3>Main Points</h3>
-                                <ul>
-                                    <li>Point 1: Details and explanation</li>
-                                    <li>Point 2: More insights</li>
-                                    <li>Point 3: Technical aspects</li>
-                                </ul>
-                                
-                                <h3>Conclusion</h3>
-                                <p>Wrapping up the main ideas and key takeaways from this article.</p>
+                                <div className="blog-meta mt-4">
+                                    <span className="date">
+                                        <i className="far fa-calendar-alt"></i> {blog.date}
+                                    </span>
+                                </div>
+                                <div className="blog-content">
+                                    <h2 className="title mt-4">{blog.title}</h2>
+                                    <div className="markdown-content">
+                                        <ReactMarkdown>{blog.detail}</ReactMarkdown>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }
 
