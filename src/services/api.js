@@ -34,7 +34,7 @@ export const blogApi = {
     },
     getBySlug: async (slug) => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/blog/${slug}`);
+            const response = await axios.get(`${API_BASE_URL}/blogs/slug/${slug}`);
             return response.data;
         } catch (error) {
             throw error;
@@ -42,7 +42,7 @@ export const blogApi = {
     },
     getById: async (id) => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/blog/id/${id}`);
+            const response = await axios.get(`${API_BASE_URL}/blog/${id}`);
             return response.data;
         } catch (error) {
             throw error;

@@ -16,13 +16,13 @@ const BlogDetails = () => {
         const fetchBlog = async () => {
             try {
                 const response = await blogApi.getBySlug(slug)
-                if (response.success) {
-                    setBlog(response.data.data)
+                if (response && response.data) {
+                    setBlog(response.data)
                 } else {
-                    setError(response.message)
+                    setError('Blog post not found')
                 }
             } catch (err) {
-                setError('Failed to fetch blog post')
+                setError(err.response?.data?.message || 'Failed to fetch blog post')
                 console.error('Error fetching blog post:', err)
             } finally {
                 setLoading(false)
@@ -35,22 +35,93 @@ const BlogDetails = () => {
     if (loading) {
         return (
             <div className="container mt-5">
-                <div className="text-center">Loading blog post...</div>
+                <header className="blog-header" style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    zIndex: 1000,
+                    backgroundColor: 'white',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                    padding: '20px 0'
+                }}>
+                    <div className="container">
+                        <button
+                            onClick={() => navigate('/')}
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                                background: 'none',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontSize: '16px',
+                                color: '#333'
+                            }}
+                        >
+                            <RiArrowLeftLine size={20} />
+                            Back to Home
+                        </button>
+                    </div>
+                </header>
+                <div className="container loading-container" style={{ marginTop: '100px' }}>
+                    <div className="row justify-content-center">
+                        <div className="col-lg-8">
+                            <h2>Loading Post ..</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
 
     if (error || !blog) {
         return (
+            
             <div className="container mt-5">
-                <h2>{error || 'Blog post not found'}</h2>
+                <header className="blog-header" style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    zIndex: 1000,
+                    backgroundColor: 'white',
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                    padding: '20px 0'
+                }}>
+                    <div className="container">
+                        <button
+                            onClick={() => navigate('/')}
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                                background: 'none',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontSize: '16px',
+                                color: '#333'
+                            }}
+                        >
+                            <RiArrowLeftLine size={20} />
+                            Back to Home
+                        </button>
+                    </div>
+                </header>
+                <div className="container error-container" style={{ marginTop: '100px' }}>
+                    <div className="row justify-content-center">
+                        <div className="col-lg-8">
+                            <h2>{error || 'Blog post not found'}</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
 
     const ogImageUrl = blog.image.startsWith('http') 
         ? blog.image 
-        : `${import.meta.env.VITE_API_URL}/${blog.image}`
+        : `${import.meta.env.VITE_API_URL}/uploads/${blog.image}`
 
     return (
         <>
@@ -132,7 +203,7 @@ const BlogDetails = () => {
                                     )}
                                 </div>
                                 <div className="blog-content">
-                                    <h2 className="title mt-4">{blog.title}</h2>
+                                    {/* <h2 className="title mt-4">{blog.title}</h2> */}
                                     <div className="markdown-content">
                                         <ReactMarkdown>{blog.content}</ReactMarkdown>
                                     </div>

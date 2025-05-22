@@ -66,7 +66,7 @@ const Blogs = () => {
                         <Card 
                             key={id} 
                             date={new Date(createdAt).toLocaleDateString()} 
-                            src={image.startsWith('http') ? image : `${import.meta.env.VITE_API_URL}/${image}`} 
+                            src={image.startsWith('http') ? image : `${import.meta.env.VITE_API_URL}/uploads/${image}`} 
                             description={content.substring(0, 150) + '...'} 
                             title={title} 
                             id={id} 
