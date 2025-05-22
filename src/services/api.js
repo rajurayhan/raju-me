@@ -6,7 +6,7 @@ const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 export const portfolioApi = {
     getAll: async () => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/portfolio`);
+            const response = await axios.get(`${API_BASE_URL}/portfolio?limit=9`);
             return response.data;
         } catch (error) {
             throw error;
@@ -26,7 +26,7 @@ export const portfolioApi = {
 export const blogApi = {
     getAll: async () => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/blogs`);
+            const response = await axios.get(`${API_BASE_URL}/blogs?limit=9`);
             return response.data;
         } catch (error) {
             throw error;
